@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -13,16 +13,49 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-
-    <link href="css/style.css" rel="stylesheet">
     <link href="css/ekko-lightbox.css" rel="stylesheet">
     <link href="css/flexslider.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bubble.css">
+    <link rel="stylesheet" href="css/parc.css">
+    <script src="js/modernizr.js"></script>
+    <link href="css/style.css" rel="stylesheet">
     <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
+    <!-- Favicon !-->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="img/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="img/favicon/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;" />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+    <!-- Favicon !-->
+    <!-- Loader -->
+    <div class="loader"></div>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript">
+        $(window).load(function () {
+            $(".loader").fadeOut("500000");
+        })
+    </script>
+    <!-- Loader -->
 </head>
 
 <body>
@@ -49,8 +82,8 @@
                             <li class="current"><a href="#acc" class="linear">Accueil</a></li>
                             <li><a href="#qui" class="linear">Qui suis-je ?</a></li>
                             <li><a href="#comp" class="linear">Compétences</a></li>
-                            <li><a href="#" class="linear">Parcours</a></li>
-                            <li><a href="#" class="linear">Portfolio</a></li>
+                            <li><a href="#parc" class="linear">Parcours</a></li>
+                            <li><a href="#portfolio" class="linear">Portfolio</a></li>
                             <li><a href="#contact" class="linear">Contacts</a></li>
                         </ul>
 
@@ -65,7 +98,7 @@
         <!-- Full Page Image Header Area -->
         <div id="acc" class="header">
             <video autoplay loop poster="" id="bgvid">
-                <source src="/video/343731697.mp4" type="video/mp4">
+                <source src="video/343731697.mp4" type="video/mp4">
             </video>
 
             <div class="maskHeader"></div>
@@ -100,12 +133,13 @@
 
 
         <!-- content -->
+
         <div id="qui" class="page">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10  col-md-offset-1">
                         <div class="build title-page">
-                            <h2 class="text-center">Qui suis-je ?</h2>
+                            <h1 class="text-center">Qui suis-je ?</h1>
                             <div class="losange"><img src="img/losange.png" alt="losange" /></div>
                         </div>
                     </div>
@@ -114,113 +148,364 @@
                 <!-- end row -->
 
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="build main-about">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="animation-element slide-left about-content">
-                                        <img src="img/1.jpg" alt="presentation"/>
-                                    </div>
-                                    <div class="animation-element slide-right about-content">
-                                        <p>Bonjour</p>
-                                        <a href="#contact" class="btn btn-clear btn-lg border-color linear hire">Contactez moi !</a>
-                                    </div>
-                                </div>
-                            </div>
-
+                    
+                    <div class="build main-about">
+                        <div class="animation-element slide-left about-content">
+                            <img id="me" src="img/1.png" alt="presentation" />
+                        </div>
+                        <div class="animation-element slide-right about-content">
+                            <p>Bonjour, je m'appelle <span>Salomé FISCHER</span>, j'ai <span>18 ans</span> et je suis actuellement en première année de <span>DUT Métiers du Multimédia et de l'Internet </span>à l'IUT de <span>Haguenau</span>.
+                                <br/> Depuis toute petite j'ai toujours était <span>passionnée</span> par le cinéma, savoir qu'on peut pratiquement tout y faire c'est ça la magie du cinéma.
+                                <br/>
+                                <br/> Et avec ce CV interactif je souhaite vous montrer ma <span>motivation</span> et mon <span>sérieux</span>.
+                                <br/><span> Mon ambition ? </span> Réaliser des films pour le grand écran !
+                                <br/> Si vous souhaitez en savoir plus je vous invite à découvrir le reste du site et si vous souhaitez garder une trace papier de ce que vous trouverez sur ce site, vous pouvez télécharger mon CV.
+                                <br/>
+                                <br/> <a href="" class="btn btn-clear btn-lg border-color linear hire">Télécharger mon CV Papier</a></p>
 
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- /Intro -->
-
-        <!-- Portfolio -->
-    <section id="portfolio">
-		<div id="color-bg"></div>
-		<h2>Portfolio</h2>
-		<ul class="port-style">
-			<div class="diamondswrap" id="port-items">
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 1</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 2</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 3</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 4</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 5</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 6</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 7</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 8</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 9</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 10</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 11</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 12</h4><a href="#">Take a look</a></span></div>
-				<div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 13</h4><a href="#">Take a look</a></span></div>
-                <div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 14</h4><a href="#">Take a look</a></span></div>
-                <div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 15</h4><a href="#">Take a look</a></span></div>
-                <div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 16</h4><a href="#">Take a look</a></span></div>
-                <div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 17</h4><a href="#">Take a look</a></span></div>
-                <div class="item" style="background-image: url(/img/fleche.png);"><span class="item-hover"><h4>Project 18</h4><a href="#">Take a look</a></span></div>
-			</div>
-		</ul>
-	</section>
-        <!-- /Portfolio -->
-
-        <!--contact-->
-        <!--contact-->
-
-        <!-- Footer -->
-        <footer class="bg-black">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 ">
-                        <div class="cp-right">
-                            <p>&copy; 2016. SF. All Rights Reserved. </p>
-                        </div>
-                        <!-- end build -->
-                    </div>
-                    <!-- end col -->
-
-                    <div class="col-md-6 text-right">
-
-                        <ul class="list-inline">
-                            <li><a href="#" class="socIcon color-primary linear"><i class="fa fa-facebook fa-2x"></i></a></li>
-                            <li><a href="#" class="socIcon color-primary linear"><i class="fa fa-twitter fa-2x"></i></a></li>
-                            <li><a href="#" class="socIcon color-primary linear"><i class="fa fa-dribbble fa-2x"></i></a></li>
-                        </ul>
-
+    <!-- /Intro -->
+    <!-- Compétences -->
+    <div id="comp" class="comp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10  col-md-offset-1">
+                    <div class="build title-page">
+                        <h1 class="text-center">Mes compétences ?</h1>
+                        <div class="losange"><img src="img/losange.png" alt="losange" /></div>
+                        <br/>
                     </div>
                 </div>
+                <!-- end col -->
             </div>
-        </footer>
-        <!-- /Footer -->
+            <div class="section-home about-us fadeIn animated">
 
-        <!-- JavaScript -->
-    
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-        <script src="js/jquery-1.10.2.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/jquery.sticky.js"></script>
-        <script src="js/jquery.nav.js"></script>
-        <script src="js/jquery.scrollTo.js"></script>
-        <script src="js/jquery.flexslider.js"></script>
-        <script type="text/javascript" src="js/ekko-lightbox.js"></script>
-        <script src="js/jquery.easing.1.3.js"></script>
-        <script src="js/jquery.shuffle.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/anim.js"></script>
-        <script src="js/modernizr.custom.js"></script>
-        <script src="js/device.min.js"></script>
-        <script src="js/jquery.wordrotator.js"></script>
-        <script src="js/smooth-scroll.js"></script>
-        <script src="js/TweenMax.min.js"></script>
-        <script src="js/jquery.superscrollorama.js"></script>
-        <script src="js/jquery.diamonds.js"></script>
-        <script src="js/jquery.mb.YTPlayer.js"></script>
-        <script src="js/scripts.js"></script>
-        <script src="js/pace.js"></script>
+                <div class="col-md-3 col-sm-6">
 
-        <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <div class="wrapper">
+
+                                <div class="green green1">
+                                    <div class="progresscircle">
+                                        <div class="inner">
+                                            <div class="percent"><span>80</span>%</div>
+                                            <div class="water"></div>
+                                            <div class="glare"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br/>
+                        <h3 class="col-title">Bureautique</h3>
+                        <hr/>
+                        <div class="col-details">
+
+                            <p>Il s'agit de <span>Word</span>, <span>Excel</span> et <span>Powerpoint</span>. Détenant le <span>C2I</span> (Certificat d'Informatique et Internet), j'ai par conséquent était <span>évalué</span> et <span>certifié</span> sur mes compétences en gestion de logiciels de bureautiques.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <div class="wrapper">
+
+                                <div class="green green2">
+                                    <div class="progresscircle">
+                                        <div class="inner">
+                                            <div class="percent"><span>70</span>%</div>
+                                            <div class="water"></div>
+                                            <div class="glare"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br/>
+                        <h3 class="col-title">Adobe</h3>
+                        <hr/>
+                        <div class="col-details">
+
+                            <p>Il s'agit de <span>Photoshop</span>, <span>Illustrator</span> et <span>Première Pro</span>. Ayant étudié leur fonctionnement en <span>cours</span> et aussi en pratiquant au <span>quotidien</span>, ça m'a permis d'acquérir des <span>bonnes bases</span> et de les <span>approfondir</span>, ce qui me vaut désormais une certaine expérience.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <div class="wrapper">
+
+                                <div class="green green3">
+                                    <div class="progresscircle">
+                                        <div class="inner">
+                                            <div class="percent"><span>60</span>%</div>
+                                            <div class="water"></div>
+                                            <div class="glare"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br/>
+                        <h3 class="col-title">Codage</h3>
+                        <hr/>
+                        <div class="col-details">
+
+                            <p>Il s'agit de <span>HTML</span>, <span>CSS</span>, <span>PHP</span>, <span>BDD</span> et <span>CMS</span>. La première année contient des <span>projets</span> utilisant uniquement ces codages, ce qui m'a permis d'acquérir <span>l'expérience</span>, nécessaire à la <span>création</span> de ce site et de bien d'autres. </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-3 col-sm-6">
+
+                    <div class="about-us-col">
+
+                        <div class="col-icon-wrapper">
+                            <div class="wrapper">
+
+                                <div class="green green4">
+                                    <div class="progresscircle">
+                                        <div class="inner">
+                                            <div class="percent"><span>55</span>%</div>
+                                            <div class="water"></div>
+                                            <div class="glare"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <br/>
+                        <h3 class="col-title">Langues</h3>
+                        <hr/>
+                        <div class="col-details">
+
+                            <p>Il s'agit de <span>l'Anglais</span> et de <span>l'Allemand</span>. En Anglais mon niveau est <span>B1 - B2</span>. Quant à l'Allemand je possède le niveau <span>A2</span>.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- /Compétences -->
+    <!-- Parcours -->
+    <div id="parc" class="parc">
+        <div class="row">
+                <div class="col-md-10  col-md-offset-1">
+                    <div class="build title-page">
+                        <h1 class="text-center">Mon parcours ?</h1>
+                        <div class="losange"><img src="img/losange.png" alt="losange" /></div>
+                        <br/>
+                    </div>
+                </div>
+                <!-- end col -->
+            </div>
+    <div id="cd-timeline" class="cd-container">
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-picture">
+                <img src="img/icon/loc.png" alt="location" />
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Location ?</h2>
+                <p>14 rue Colomé 67500 HAGUENAU (Scolaire)<br/>4 rue des hauts jardins 57790 LORQUIN (Familliale)</p>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-movie">
+                <img src="img/icon/biz.png" alt="bizzbee" />
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Stage ?</h2>
+                <p>Stage <span>Marketing</span> et <span>Commerce</span> dans le magasin de vêtements <span>Bizzbee</span> à <span>SARREBOURG</span>. <br />Ce stage m'a permis d'étudier le <span>besoin</span> des clients et d'y <span>répondre</span> le plus rapidement possible.</p>
+                <span class="cd-date">Novembre 2011</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-bac">
+                <img src="img/icon/scolaire.png" alt="scolaire" />
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Bac ?</h2>
+                <p>Baccalauérat Technologique <span>STI2D</span> (Science Technologique de l'Industrie et du Développement Durable) à <span>SARREBOURG</span>.<br/> Cette formation m'a permis d'acquérir plus d'<span>autonomie</span> et d'être en mesure de <span>gérer un projet</span> du début à la fin.</p>
+                <span class="cd-date">Juin 2015</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-scolaire">
+                <img id="dut" src="img/icon/diplome.png" alt="scolaire" />
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>DUT ?</h2>
+                <p><span>(Actuellement)</span><br/>DUT <span>MMI</span> (Diplôme Univesitaire de Techologie des Métiers du Multimédia et de l'Internet) à l'Institut Universitaire de Technologie de <span>HAGUENAU</span>.<br/>Cette formation m'a permis de m'<span>améliorer</span> en informatique et d'apprendre les <span>bases de chacunes des matières enseignées</span> (Art, Web, Design, Info, Com, etc), ce qui m'a conduit à choisir l'<span>Audiovisuel</span> en <span>option principale</span>.</p>
+                <span class="cd-date">Septembre 2015</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-aeaih">
+                <img id="amical" src="img/icon/amical.png" alt="amical" />
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Implication ?</h2>
+                <p><span>(Actuellement)</span><br/>VP <span>Trésorier Adjointe</span> à l'<span>AEAIH</span> (Amicale des Etudiant et de Anciens de IUT de HAGUENAU).<br/>Ce "poste" m'a permis de <span>m'impliquer</span> dans la vie étudiante et <span>d'organiser</span> quelques évènements, ainsi que d'améliorer le <span>travail d'équipe</span>.</p>
+                <span class="cd-date">Mars 2016</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+
+        <div class="cd-timeline-block">
+            <div class="cd-timeline-img cd-leclerc">
+                <img id="leclerc" src="img/icon/leclerc.png" alt="leclerc" />
+            </div>
+            <!-- cd-timeline-img -->
+
+            <div class="cd-timeline-content">
+                <h2>Job ?</h2>
+                <p><span>(Actuellement)</span><br/>Il s'agit du <span>Leclerc</span> de mes parents, il se situe à <span>WASSELONNE</span>.<br/>Ce "job" m'a permis de créer des <span>supports vidéos et papier de communication</span>, ainsi que d'apprendre la <span>vie en entreprise</span>.</p>
+                <span class="cd-date">Depuis 2014</span>
+            </div>
+            <!-- cd-timeline-content -->
+        </div>
+        <!-- cd-timeline-block -->
+    </div>
+    <!-- cd-timeline -->
+    </div>
+    <!-- /Parcours -->
+    <!-- Portfolio -->
+    <section id="portfolio">
+        <div id="color-bg"></div>
+        <h2>Mon Portfolio</h2>
+        <ul class="port-style">
+            <div class="diamondswrap" id="port-items">
+                <div class="item" style="background-image: url(img/portfolio/photo/affichemexico.jpg);"><span class="item-hover"><h4>Projet 1</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/affichepopup.jpg);"><span class="item-hover"><h4>Projet 2</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/eachxother.png);"><span class="item-hover"><h4>Projet 3</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/eaufeu.jpg);"><span class="item-hover"><h4>Projet 4</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/Flyers.jpg);"><span class="item-hover"><h4>Projet 5</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/jpohag.jpg);"><span class="item-hover"><h4>Projet 6</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/listeleclerc.jpg);"><span class="item-hover"><h4>Projet 7</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/noel.png);"><span class="item-hover"><h4>Projet 8</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/oiseaux.jpg);"><span class="item-hover"><h4>Projet 9</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/pictogarage.jpg);"><span class="item-hover"><h4>Projet 10</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/sit.jpg);"><span class="item-hover"><h4>Projet 11</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/photo/selfieppfm.jpg);"><span class="item-hover"><h4>Projet 12</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/fleche.png);"><span class="item-hover"><h4>Projet 13</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/fleche.png);"><span class="item-hover"><h4>Projet 14</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/video/);"><span class="item-hover"><h4>Projet 15</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/video/);"><span class="item-hover"><h4>Projet 16</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/video/);"><span class="item-hover"><h4>Projet 17</h4><a href="#">Voir</a></span></div>
+                <div class="item" style="background-image: url(img/portfolio/video/);"><span class="item-hover"><h4>Projet 18</h4><a href="#">Voir</a></span></div>
+            </div>
+        </ul>
+    </section>
+    <!-- /Portfolio -->
+
+    <!--contact-->
+    <!--contact-->
+
+    <!-- Footer -->
+    <footer class="bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ">
+                    <div class="cp-right">
+                        <p>&copy; 2016. SF. All Rights Reserved. </p>
+                    </div>
+                    <!-- end build -->
+                </div>
+                <!-- end col -->
+
+                <div class="col-md-6 text-right">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- JavaScript -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/jquery.nav.js"></script>
+    <script src="js/jquery.scrollTo.js"></script>
+    <script src="js/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="js/ekko-lightbox.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.shuffle.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/anim.js"></script>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/device.min.js"></script>
+    <script src="js/jquery.wordrotator.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/jquery.superscrollorama.js"></script>
+    <script src="js/jquery.diamonds.js"></script>
+    <script src="js/jquery.mb.YTPlayer.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/pace.js"></script>
+    <script src="js/parc.js"></script>
+
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
 
     </div>
 </body>
